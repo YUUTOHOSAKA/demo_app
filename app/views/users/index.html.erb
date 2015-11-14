@@ -1,19 +1,33 @@
-<h1>ユーザー情報一覧</h1>
-  <% @users.each do |user| %>
-  name<%= user.name%>
-  email<%= user.email%>
-  ||<%= link_to "edit" , edit_user_path(user) %>||
-  ||<%= link_to "destroy" , user , method: :delete, data: { confirm: '削除してもよろしいですか？' } %>||
-   ||<%= link_to "destroy" , user , method: :delete, data: { confirm: '削除してもよろしいですか？' } %>||
-  <br>
- <% end %>
+ <div class="panel panel-success">
+	<div class="panel-heading">
+		ユーザ情報一覧
+	</div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>名前</th>
+				<th>メールアドレス</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @users.each do |user| %>
+			<tr>
+				<th><%= user.name%></th>
+				<td><%= user.email%></td>
+			    <td><%= link_to "編集" , edit_user_path(user) %></td>
+			    <td><%= link_to "削除" , user , method: :delete, data: { confirm: '削除してもよろしいですか？' } %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div> 
 
  <%= form_for(User.new) do |f| %>
 
-  名前:
+  <button type="button" class="btn btn-default" aria-label="Left Align"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>名前</button>
   <%= f.text_field :name %>
 
-  内容:
+  <button type="button" class="btn btn-default" aria-label="Left Align"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>メールアドレス</button>
   <%= f.text_field :email %>
   <%= f.submit %>
  <% end %>
