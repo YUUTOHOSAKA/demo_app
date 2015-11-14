@@ -1,9 +1,9 @@
 <%= form_for(User.new) do |f| %>
 
-  名前:
+  <button type="button" class="btn btn-default" aria-label="Left Align"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>名前</button>
   <%= f.text_field :name %>
 
-  内容:
+  <button type="button" class="btn btn-default" aria-label="Left Align"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>メールアドレス</button>
   <%= f.text_field :email %>
-  <%= f.submit %>
+  <%= f.submit  class: "btn btn-sm btn-primary" %>
  <% end %>

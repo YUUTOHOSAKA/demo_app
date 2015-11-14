@@ -1,4 +1,4 @@
- <div class="panel panel-success">
+ <div class="panel panel-success"><!--　bootstrapのパネル使用  -->
 	<div class="panel-heading">
 		ユーザ情報一覧
 	</div>
@@ -24,10 +24,10 @@
 
  <%= form_for(User.new) do |f| %>
 
-  <button type="button" class="btn btn-default" aria-label="Left Align"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>名前</button>
-  <%= f.text_field :name %>
+  <button type="button" class="btn btn-success" aria-label="Left Align"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>名前</button>
+  <%= f.text_field :name %><!--　bootstrapのアイコン使用  -->
 
-  <button type="button" class="btn btn-default" aria-label="Left Align"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>メールアドレス</button>
-  <%= f.text_field :email %>
-  <%= f.submit %>
+  <button type="button" class="btn btn-success" aria-label="Left Align"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>メールアドレス</button>
+  <%= f.text_field :email %><!--　bootstrapのアイコン使用  -->
+  <%= f.submit class: "btn btn-sm btn-primary" %><!-- bootstrapのラベル使用 -->
  <% end %>
