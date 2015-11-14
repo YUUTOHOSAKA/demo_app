@@ -1,2 +1,19 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<h1>ユーザー情報一覧</h1>
+  <% @users.each do |user| %>
+  name<%= user.name%>
+  email<%= user.email%>
+  ||<%= link_to "edit" , edit_user_path(user) %>||
+  ||<%= link_to "destroy" , user , method: :delete, data: { confirm: '削除してもよろしいですか？' } %>||
+   ||<%= link_to "destroy" , user , method: :delete, data: { confirm: '削除してもよろしいですか？' } %>||
+  <br>
+ <% end %>
+
+ <%= form_for(User.new) do |f| %>
+
+  名前:
+  <%= f.text_field :name %>
+
+  内容:
+  <%= f.text_field :email %>
+  <%= f.submit %>
+ <% end %>
